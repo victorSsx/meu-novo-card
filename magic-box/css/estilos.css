@@ -1,40 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
-
-:root {
-  --background: #000000;
-  --card: #0A0A0A;
-  --titulo: #e4e4e4;
-  --texto: #C8F8DB;
-  --efeitos: #46df32;
-}
-
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-
-body {
-  background-color: var(--background);
-  scroll-behavior: smooth;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-}
-
-p {
-  color: #fff;
-}
-
-.face {
-  width: 400px;
-  height: 600px;
-}
-
-
+/* Estilos CSS para o Card de trás*/
 .card-back {
   width: 30rem;
   height: 550px;
@@ -46,11 +10,11 @@ p {
   align-items: center;
   text-align: justify;
   position: absolute;
-  border-radius: 0.2rem;
+  border-radius: 0.9rem;
   box-shadow: 0 8px 10px 0;
   overflow: hidden;
   transition: all 0.4s ease;
-    backface-visibility: hidden;
+  backface-visibility: hidden;
 }
 
 .card-back {
@@ -58,7 +22,7 @@ p {
   backface-visibility: hidden;
 }
 
-.face.active .card{
+.face.active .card {
   transform: rotateY(180deg);
   z-index: 0;
 }
@@ -68,22 +32,24 @@ p {
   z-index: 1;
 }
 
+/* Estilos CSS para o Card da frente*/
 .card {
   width: 30rem;
   height: 550px;
   background: var(--card);
-  padding: 25px;
+  padding: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: justify;
   position: absolute;
-  border-radius: 0.2rem;
+  border-radius: 0.9rem;
   box-shadow: 0 8px 10px 0;
   overflow: hidden;
   z-index: 1;
   transition: all 0.4s ease;
+  backface-visibility: hidden;
 }
 
 .card span:first-of-type {
@@ -96,14 +62,6 @@ p {
   animation: animar1 2s linear infinite;
 }
 
-@keyframes animar1 {
-  0% {
-    transform: translateX(-100%);
-  }
-  100% {
-    transform: translateX(100%);
-  }
-}
 
 .card span:nth-of-type(2) {
   position: absolute;
@@ -116,15 +74,6 @@ p {
   animation-delay: 1s;
 }
 
-@keyframes animar2 {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(100%);
-  }
-}
-
 .card span:nth-of-type(3) {
   position: absolute;
   bottom: 0;
@@ -133,15 +82,6 @@ p {
   height: 3px;
   background: linear-gradient(to left, transparent, rgb(255, 255, 255));
   animation: animar3 2s linear infinite;
-}
-
-@keyframes animar3 {
-  0% {
-    transform: translateX(100%);
-  }
-  100% {
-    transform: translateX(-100%);
-  }
 }
 
 .card span:nth-of-type(4) {
@@ -155,17 +95,8 @@ p {
   animation-delay: 1s;
 }
 
-@keyframes animar4 {
-  0% {
-    transform: translateY(100%);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
 .card::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   right: 0;
@@ -174,9 +105,7 @@ p {
   border-right: 20px solid var(--efeitos);
 }
 
-
-
-.content  h3 {
+.content h3 {
   text-align: center;
   color: var(--titulo);
   margin-bottom: 16px;
@@ -195,25 +124,23 @@ p {
   color: var(--titulo);
 }
 
-
 h2::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--efeitos);
   height: 2px;
   width: 40px;
-  bottom: 2.4px; 
-  transition: all .6s ease;
+  bottom: 2.4px;
+  transition: all 0.6s ease;
 }
 
 h2:hover::before {
   cursor: pointer;
   width: 176.5px;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
-
-
-.skills{
+/* Estilos CSS para as skills*/
+.skills {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -222,53 +149,62 @@ h2:hover::before {
   margin: 40px 0 60px 0;
 }
 
-
-
 .skills a {
   background-color: var(--background);
   color: var(--texto);
   align-items: center;
-  border-radius: 0.2rem;
+  border-radius: 0.9rem;
   padding: 0.4em;
   font-size: 13px;
   letter-spacing: 1px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 12px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  padding: 0 -20px;
+}
+.skills a:hover {
+  background-color: var(--efeitos);
+  color: var(--titulo);
+  transition: all 0.3s ease;
+  transform: translateY(-2px);
 }
 
-.content, .content-back {
+.content,
+.content-back {
   height: 180px;
 }
 
+.face h3::before {
+  content: "";
+  position: absolute;
+  background-color: var(--efeitos);
+  height: 2px;
+  width: 40px;
+  bottom: 3px;
+  transition: all 0.6s ease;
+}
+
+.face h3:hover::before {
+  cursor: pointer;
+  width: 138px;
+  transition: all 0.6s ease;
+}
 
 .face h3::before {
-  content: '';
+  content: "";
   position: absolute;
   background-color: var(--efeitos);
   height: 2px;
   width: 40px;
-  bottom: 3px; 
-  transition: all .6s ease;
+  bottom: 4px;
+  transition: all 0.6s ease;
 }
 
 .face h3:hover::before {
   cursor: pointer;
   width: 138px;
-  transition: all .6s ease;
-}
-
-.face  h3::before {
-  content: '';
-  position: absolute;
-  background-color: var(--efeitos);
-  height: 2px;
-  width: 40px;
-  bottom: 4px; 
-  transition: all .6s ease;
-}
-
-.face h3:hover::before {
-  cursor: pointer;
-  width: 138px;
-  transition: all .6s ease;
+  transition: all 0.6s ease;
 }
 
 .content-back h3 {
@@ -287,7 +223,7 @@ h2:hover::before {
   margin-top: 32px;
   padding: 20px;
 }
-
+/* Estilos CSS para a imagem*/
 .image img {
   margin: -44px auto 20px;
   width: 180px;
@@ -302,25 +238,9 @@ h2:hover::before {
   object-fit: cover;
 }
 
-@keyframes borderAnimated {
-  0% {
-    border: 1.7px solid #46df32;
-  }
-  25% {
-    border: 1.7px solid rgb(255, 255, 255);
-  }
-  50% {
-    border: 1.7px solid #46df32;
-  }
-  75% {
-    border: 1.7px solid rgb(255, 255, 255);
-  }
-  100% {
-    border: 1.7px solid #46df32;
-  }
-}
-
-#read-btn, #read-btn2 {
+/* Estilos CSS para os botões*/
+#read-btn,
+#read-btn2 {
   width: 12rem;
   height: 3rem;
   background-color: var(--efeitos);
@@ -330,7 +250,7 @@ h2:hover::before {
   font-size: 16px;
   padding: 4px;
   margin-top: 4px;
-  border-radius: 2px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease-in;
 }
@@ -340,11 +260,11 @@ h2:hover::before {
   padding: 20px;
 }
 
-
-#read-btn:hover, #read-btn2:hover {
+#read-btn:hover,
+#read-btn2:hover {
   background: transparent;
   color: #46df32;
-  transition: all .4s;
+  transition: all 0.4s;
   border: 2px solid;
 }
 
@@ -362,7 +282,7 @@ h2:hover::before {
   display: flex;
   align-items: center;
   margin: 20px;
-  font-size: 24px
+  font-size: 24px;
 }
 
 .content-back .social-media:hover {
