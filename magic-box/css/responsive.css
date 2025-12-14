@@ -1,0 +1,29 @@
+@media only screen and (max-width: 420px) {
+    .face {
+      width: 100%;
+      height: 400px;
+    }
+
+    .card, .card-back {
+      width: 20rem;
+      height: 600px;
+
+      margin: auto auto auto 44px;
+  }
+  .content h3 {
+    margin: 4px 0 40px 0;
+  }
+  #read-btn {
+    margin-top: 42px;
+  }
+
+    .content p {
+        padding: 0 16px;
+        font-size: 14px;
+    }
+
+    .content-back p {
+        padding: 0 16px;
+        font-size: 14px;
+    }
+}
